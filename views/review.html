@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+   <!-- Link Css -->
+   <link rel="stylesheet" href="./css/_grid.css">
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="./css/style_all.css">
+   <!-- bootstrap4 -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <!-- bootstrap -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css”>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+       integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+   <!-- Font -->
+   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+       crossorigin="anonymous" />
+   <!-- Link Google Font -->
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+   <!-- Link Ion Icons -->
+   <link rel="stylesheet"
+       href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.1.2/collection/components/icon/icon.min.css"
+       integrity="sha512-DR9Jj0uFIfe7v1QLrvPRusRxqdSnVSVRyRBt1H8gcRQgxMKEwsOMSNYs0hyIpo8AITFyCMDC2Q1fCg1XcgdYig=="
+       crossorigin="anonymous" />
+   <!-- Link Owl Carousel Css -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+       integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+       crossorigin="anonymous" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+       integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+       crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="" id="main">
+        <div class="" id="header">
+            <div class="container-fluid" id="nav1">
+                <div id="nav1_content">
+                    <marquee>!!! Săn mã nhận QUÀ KHỦNG lên đến 2 triệu đồng!!!</marquee>
+                </div>
+            </div>
+            <div id="header_content">
+                <div class=" inline_block" id="navbar">
+                    <nav class="navbar navbar-expand-md box ">
+                        <a class="navbar-brand inline_block" href="/" style="float: left;"><img src="/images/logo.png"
+                                width="70%"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <form method="GET" class="input" action="/search">
+                                <input type="text" class="form-control" name="key" id="key"
+                                    placeholder="Tìm Kiếm sản phẩm..." aria-label="Tìm kiếm"
+                                    aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button type="submit" class="search"
+                                        style="border: 0px solid white; padding: 0px;"><span class="input-group-text"
+                                            id="basic-addon2" style="background-color: white; padding-bottom: 10px;
+                                        padding-top: 10px;"><i class="fas fa-search"></i></span></button>
+                                </div>
+                            </form>
+                            <% if (dataCustomer.id) { %>
+                                <ul class="navbar-nav ml-auto style" style="margin-top:6px;">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <ion-icon style="margin-top: -2px; font-size: 30px;" name="person-circle-outline">
+                                            </ion-icon>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#"><%= dataCustomer.name %></a>
+                                            <a class="dropdown-item" href="#" onclick="logOut()">Đăng xuất</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item cart">
+                                        <a class="nav-link" href="/cart" style="display: inline-block;
+                                                position: relative;">
+                                            <ion-icon name="cart-outline" style="font-size: 25px;"></ion-icon>
+                                            </i><span class="cartNum">0</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <% } else {%>
+                                <ul class="navbar-nav ml-auto style">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/login">Đăng Nhập</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/register">Đăng Ký</a>
+                                    </li>
+                                    <li class="nav-item cart">
+                                        <a class="nav-link" href="/cart" style="display: inline-block;
+                                                position: relative;">
+                                            <ion-icon name="cart-outline" style="font-size: 25px;"></ion-icon>
+                                            </i><span class="cartNum">0</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <% } %>
+                        </div>
+                    </nav>
+                </div>
+                <hr>
+                <div id="menu">
+                    <nav>
+                        <a href="/">SHOP</a>
+                        <a href="/">NEW</a>
+                        <a href="/">BEST SELLER</a>
+                        <a href="/">BRAND</a>
+                        <a href="/review">REVIEW</a>
+                    </nav>
+                </div>
+                <hr>
+            </div>
+            <div class="container-fluid">
+                <div class="key_beside">
+                    <br><br><br>
+                    <h4>Từ khóa nổi bật</h4>
+                    <br>
+                    <span class="tag">#serum</span> <span class="tag"> #sữa rửa mặt</span>
+                    <br>
+                    <span class="tag">#lotion</span> <span class="tag">#dưỡng da</span> <span class="tag">#giảm
+                        mụn</span>
+                </div>
+                <div class="container">
+                    <div>
+                        <center>
+                            <a class="box_header" href="/login">
+                                <img src="/images/avatar.png" class="box_img">
+                                <div class="box_content">
+                                    Đăng nhập để chia sẻ...
+                                </div>
+                            </a>
+                        </center>
+                    </div>
+                    <% review.forEach((review, index) => { %>
+                    <div class="jumbotron">
+                        <p><b><%= review.hoten %></b><small> đã viết đánh giá cho sản phẩm</small> <a
+                                href="/product/<%= review.idSP %>"
+                                style="color: rgb(55, 100, 197); text-decoration: none;"><%= review.tenSP %></a></p>
+                        <div class="item-info__rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span><%= review.ngayreview %></span>
+                        </div>
+                        <br>
+                        <p><%= review.noidung %></p>
+                        <img src="/images/<%= review.anhreview%>">
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="container-fluid">
+            <div id="footer_content" class="row">
+                <div class="col-sm-3">
+                    <h3>Lily Cosmetic</h3>
+                    <br>
+                    <p>Lily Cosmetic là kênh mua sắm mỹ phẩm, làm đẹp hàng đầu Việt Nam. Mang đến cho khách hàng những
+                        sản phẩm chất lượng, uy tín.</p>
+                </div>
+                <div class="col-sm-5">
+                    <h4>Kết nối với chúng tôi</h4>
+                    <br>
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLiLy-Comestic-100342605183250&tabs=timeline&width=500&height=70&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="400" height="70" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowTransparency="true" allow="encrypted-media"></iframe>
+                    <br><br>
+                    <p>Hotline: 0333.017.333</p>
+                    <p>Email: cnttk59a@gmail.com</p>
+                    <br>
+                    <div>
+                        <i class="fab fa-facebook-f footer_icon"></i>
+                        &nbsp;&nbsp;&nbsp;
+                        <i class="fab fa-facebook-messenger footer_icon"></i>
+                        &nbsp;&nbsp;
+                        <i class="fab fa-instagram footer_icon"></i>
+                        &nbsp;&nbsp;
+                        <i class="far fa-envelope footer_icon"></i>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Liên hệ </h3>
+                    <p>Địa chỉ: 207 Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.820419355175!2d105.83999941424476!3d20.999834494142586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac71752d8f79%3A0xd2ec575c01017afa!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBLaW5oIFThur8gUXXhu5FjIETDom4!5e0!3m2!1svi!2s!4v1602394305413!5m2!1svi!2s"
+                        width="250" height="250" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    #header_content {
+        width: 80%;
+        padding: 5px;
+        margin: 0px auto;
+
+
+    }
+
+    .inline_block {
+        display: inline-block;
+        text-decoration: none;
+
+    }
+
+    #navbar {
+        /* float: right; */
+        padding: 10px;
+        font-size: 110%;
+        margin-top: -50px;
+        width: 100%;
+        margin-bottom: -40px;
+    }
+
+    #navbar nav a {
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    .input {
+        /* margin: -1px;
+        
+        border: 1px solid #b1154a; */
+        width: 67%;
+        margin-top: 4px;
+        margin-left: -50px;
+    }
+
+    #menu {
+        display: inline-block;
+        margin: 0px auto;
+        /* margin-top: 10px;
+        margin-bottom: 10px; */
+    }
+
+    #menu :hover {
+        color: chocolate;
+    }
+
+    #menu nav a {
+        text-decoration: none;
+        padding: 70px;
+        font-size: 103%;
+        color: black;
+        font-weight: bold;
+    }
+
+    .box {
+        margin-bottom: -20px;
+    }
+
+    nav li a {
+        color: black;
+    }
+
+    .style {
+        margin-top: -10px;
+    }
+
+    div nav {
+        width: 100%;
+    }
+
+    #collapsibleNavbar {
+        margin: 55px;
+    }
+
+    .jumbotron {
+        width: 70%;
+        margin: 0px auto;
+        background-color: white;
+        border: 1px solid rgb(199, 185, 211);
+        padding-top: 20px;
+        margin-bottom: 45px;
+        margin-top: 30px;
+        padding-bottom: 20px;
+        box-shadow: 0 0 7px rgba(0, 0, 0, .1);
+    }
+
+    .jum {
+        width: 45%;
+        display: inline-block;
+        /* border: 1px solid black;
+        margin: 10px; */
+    }
+
+    #footer {
+        width: 100%;
+        background-color: #363636;
+    }
+
+    #footer_content {
+        width: 80%;
+        color: blanchedalmond;
+        margin: 0px auto;
+        padding: 13px;
+    }
+
+    #nav1 {
+        width: 100%;
+        background-color: #363636;
+        margin-top: 9px;
+        margin-bottom: -15px;
+        margin: 0px auto;
+        height: 40px;
+    }
+
+    #nav1_content {
+        width: 80%;
+        display: inline-block;
+        color: white;
+        font-size: small;
+        padding-left: 160px;
+        margin-top: 10px;
+    }
+
+    #collapsibleNavbar {
+        margin: 30px;
+    }
+
+    .button {
+        border-radius: 8px;
+    }
+
+    .footer_icon {
+        font-size: 1.5rem;
+        border: 1px solid white;
+        padding: 1rem;
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        /* color: blue; */
+        align-items: center;
+        display: inline-flex;
+    }
+
+    .box_header {
+        background-color: white;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 16px;
+        box-shadow: 0 0 7px rgba(0, 0, 0, .1);
+        display: inline-flex;
+        width: 70%;
+        color: black;
+
+    }
+
+    .box_header :hover {
+        text-decoration: none;
+        color: cornflowerblue;
+    }
+
+    .box_img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 14px;
+    }
+
+    .box_content {
+        border-radius: 8px;
+        padding: 4px;
+        width: 92%;
+        background-color: #FFFAFA;
+        text-align: left;
+        text-decoration: none !important;
+    }
+
+    .container-fluid {
+        background-color: rgb(225, 229, 230);
+        padding-bottom: 20px;
+    }
+
+    .container {
+        /* border: 1px solid rgb(86, 131, 168); */
+        border-radius: 6px;
+        padding-top: 13px;
+        width: 70%;
+
+    }
+
+    .key_beside {
+        float: left;
+        width: 17%;
+
+    }
+
+    .tag {
+        background-color: blanchedalmond;
+    }
+</style>
+<!-- Link Jquery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<!-- Link Js -->
+<script src="/js/main.js"></script>
+<!-- Link js Ionicons -->
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.1.2/cjs/ionicons.cjs.js"
+    integrity="sha512-v+I+njNdfChZYsA6UjfvoCfVuC59kiuqEALSEgHloBjhNaMlcWxEFWU2nHl1c/4vWvOtWugbAZwE6Ae4iwqF9A=="
+    crossorigin="anonymous"></script>
+<!-- Link Owl Carousel Js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous"></script>
+
+</html>

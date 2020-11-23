@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <title>Edit Product <%= sanpham.tenSP %></title>
+</head>
+
+<body>
+  <div class="container text-left" style="width: 70%; margin-bottom: 3rem;">
+    <br>
+    <h4>
+      Chỉnh sửa chi tiết sản phẩm <%= sanpham.tenSP %>
+    </h4>
+    <br>
+    <form method="POST" action="">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Mã Thương hiệu</label>
+        <input type="text" class="form-control" value="<%= sanpham.idTH %>" name="idTH">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Mã loại</label>
+        <input type="text" class="form-control" value="<%= sanpham.idLoai %>" name="idLoai">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput3">tên sản phẩm</label>
+        <input type="text" class="form-control" value="<%= sanpham.tenSP %>" name="tenSP">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput4">Hình ảnh</label>
+        <input type="text" class="form-control" value="<%= sanpham.hinhanh %>" name="hinhanh">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput5">Chi tiết sản phẩm</label>
+        <input type="text" class="form-control" value="<%= sanpham.chitiet %>" name="chitiet" >
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput6">Đánh giá (sao)</label>
+        <input type="text" class="form-control" value="<%= sanpham.rate %>" name="rate">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput7">Giá</label>
+        <input type="text" class="form-control" value="<%= sanpham.gia %>" name="gia">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput8">Trạng thái</label>
+        <input type="text" class="form-control" value="<%= sanpham.status %>" name="status">
+      </div>
+      <input type="submit" class="btn btn-danger" value="Submit">
+    </form>
+  </div>
+</body>
+<style>
+</style>
+</html>

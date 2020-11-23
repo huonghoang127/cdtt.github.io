@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="./css/style_all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body>
+    <div class="" id="main">
+        <div class="" id="header">
+            <div class="container-fluid" id="nav1">
+                <div id="nav1_content">
+                    <p style="float: left;">!!! Săn mã nhận QUÀ KHỦNG lên đến 2 triệu đồng!!! </p>
+                    <p class="ml-auto" style="float: right;"><i class="fas fa-truck"></i>&nbsp;&nbsp;&nbsp;&nbsp;Kiểm
+                        tra đơn hàng</p>
+                </div>
+            </div>
+            <div id="header_content">
+                <div class=" inline_block" id="navbar">
+                    <nav class="navbar navbar-expand-md box ">
+                        <a class="navbar-brand inline_block" href="#" style="float: left;"><img src="/images/logo.png"
+                                width="70%"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <div class="input-group mb-3 input">
+                                <input type="text" class="form-control" placeholder="Tìm Kiếm sản phẩm..."
+                                    aria-label="Tìm kiếm" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2"
+                                        style="background-color: white;">Tìm Kiếm</span>
+                                </div>
+                            </div>
+                            <ul class="navbar-nav ml-auto style">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">Đăng Nhập</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/register">Đăng Ký</a>
+                                </li>
+                                <li class="nav-item cart">
+                                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> &nbsp;</i><small><span
+                                                style="color: crimson;">0</span></small></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <hr>
+                <div id="menu">
+                    <nav>
+                        <a href="">SHOP</a>
+                        <a href="">NEW</a>
+                        <a href="">BEST SELLER</a>
+                        <a href="">BRAND</a>
+                        <a href="">REVIEW</a>
+                    </nav>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <br>
+        <div class="jumbotron">
+            <div class="jum">
+                <h3>Đăng Ký</h3>
+                <br>
+                <p>Đăng ký để mua hàng và sử dụng những tiện ích mới nhất</p>
+                <br>
+                <center><button type="submit" class="btn btn-primary button">Đăng nhập bằng Facebook</button></center>
+                <br><br>
+                <center>
+                    <p>Bạn đã có tài khoản??? <a href="/login"
+                            style="font-size: small;text-decoration: none; color:darkcyan;">Đăng nhập</a></p>
+                </center>
+                <br><br>
+            </div>
+            <div class="jum" style="margin: 10px; border-left: 1px solid blueviolet; padding-left: 25px;">
+                <form action="/auth/register_admin" method="POST">
+                    <input type="text" class="form-control" placeholder="user" name="user" required>
+                    <input type="password" class="form-control" placeholder="password" name="password" required>
+                    <br>
+                    <input type="password" class="form-control" placeholder="Xác nhận Mật khẩu" name="passwordConfirm"
+                        required>
+                    <br>
+                    <center><button type="submit" class="btn btn-dark button">Tạo tài khoản</button></center>
+                </form>
+            </div>
+            <br>
+        </div>
+
+        <div id="footer" class="container-fluid">
+            <div id="footer_content" class="row">
+                <div class="col-sm-3">
+                    <h3>Lily Comestic</h3>
+                    <br>
+                    <p>Lily Comestic là kênh mua sắm mỹ phẩm, làm đẹp hàng đầu Việt Nam. Mang đến cho khách hàng những
+                        sản phẩm chất lượng, uy tín.</p>
+                </div>
+                <div class="col-sm-5">
+                    <h4>Kết nối với chúng tôi</h4>
+                    <br>
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLiLy-Comestic-100342605183250&tabs=timeline&width=500&height=70&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="400" height="70" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowTransparency="true" allow="encrypted-media"></iframe>
+                    <br><br>
+                    <p>Hotline: 0333.017.333</p>
+                    <p>Email: lilycomestic@gmail.com</p>
+                    <br>
+                    <div>
+                        <i class="fab fa-facebook-f footer_icon"></i>
+                        &nbsp;&nbsp;&nbsp;
+                        <i class="fab fa-facebook-messenger footer_icon"></i>
+                        &nbsp;&nbsp;
+                        <i class="fab fa-instagram footer_icon"></i>
+                        &nbsp;&nbsp;
+                        <i class="far fa-envelope footer_icon"></i>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Liên hệ </h3>
+                    <p>Địa chỉ: 207 Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.820419355175!2d105.83999941424476!3d20.999834494142586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac71752d8f79%3A0xd2ec575c01017afa!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBLaW5oIFThur8gUXXhu5FjIETDom4!5e0!3m2!1svi!2s!4v1602394305413!5m2!1svi!2s"
+                        width="250" height="250" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    #header_content {
+        width: 80%;
+        padding: 5px;
+        margin: 0px auto;
+
+
+    }
+
+    .inline_block {
+        display: inline-block;
+        text-decoration: none;
+
+    }
+
+    #navbar {
+        /* float: right; */
+        padding: 10px;
+        font-size: 110%;
+        margin-top: -50px;
+        width: 100%;
+        margin-bottom: -40px;
+    }
+
+    #navbar nav a {
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    .input {
+        /* margin: -1px;
+        
+        border: 1px solid #b1154a; */
+        width: 67%;
+        margin-top: 4px;
+    }
+
+    #menu {
+        display: inline-block;
+        margin: 0px auto;
+        /* margin-bottom: -20px; */
+    }
+
+    #menu nav a {
+        text-decoration: none;
+        padding: 70px;
+        font-size: 103%;
+        color: black;
+        font-weight: bold;
+    }
+
+    #slider {
+        width: 100%;
+        margin-top: -122px;
+        margin-bottom: 20px;
+    }
+
+    .image {
+        width: 100%;
+        height: 80%;
+        margin-top: 107px;
+    }
+
+    .checked {
+        color: orange;
+    }
+
+    #content_cover {
+        width: 100%;
+    }
+
+    #content {
+        width: 80%;
+    }
+
+    .box {
+        margin-bottom: -20px;
+        display: inline-block;
+    }
+
+    nav li a {
+        color: black;
+    }
+
+    .style {
+        margin-top: -10px;
+    }
+
+    #footer {
+        width: 100%;
+        background-color: #363636;
+        margin-top: 30px;
+    }
+
+    #footer_content {
+        width: 80%;
+        color: blanchedalmond;
+        margin: 0px auto;
+        padding: 13px;
+    }
+
+    div nav {
+        width: 100%;
+    }
+
+    #collapsibleNavbar {
+        margin: 55px;
+    }
+
+    #nav1 {
+        width: 100%;
+        background-color: #363636;
+        margin-top: 9px;
+        margin-bottom: -15px;
+        margin: 0px auto;
+        height: 40px;
+    }
+
+    #nav1_content {
+        width: 80%;
+        display: inline-block;
+        color: white;
+        font-size: small;
+        padding-left: 160px;
+        margin-top: 10px;
+    }
+
+    .jumbotron {
+        width: 50%;
+        margin: 0px auto;
+        background-color: FFCCFF;
+        border: 1px solid blueviolet;
+        padding-top: 20px;
+        margin-bottom: 45px;
+        margin-top: 10px;
+        padding-bottom: 25px;
+    }
+
+    .jum {
+        width: 45%;
+        display: inline-block;
+        /* border: 1px solid black;
+        margin: 10px; */
+    }
+
+    .button {
+        border-radius: 8px;
+    }
+
+    .footer_icon {
+        font-size: 1.5rem;
+        border: 1px solid white;
+        padding: 1rem;
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        /* color: blue; */
+        align-items: center;
+        display: inline-flex;
+    }
+</style>
+
+</html>

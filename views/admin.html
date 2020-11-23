@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <!-- <link rel="stylesheet" href="/css/style.bundle.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <title>Admin</title>
+</head>
+
+<body>
+  <div class="container-fluid" style="display: flex;">
+    <div class="menuAdmin">
+      <nav class="navbar bg-dark" style="height: 100%;">
+        <ul class="navbar-nav" style="margin-top: -35rem;">
+          <li class="nav-item">
+            <center><a class="nav-link" href="/admin" id="trangchu">TRANG CHỦ</a></center>
+          </li>
+          <li class="nav-item navItem">
+            <a class="nav-link " href="/sanpham">Sản Phẩm</a>
+          </li>
+          <li class="nav-item  navItem">
+            <a class="nav-link" href="/admin_brand">Thương Hiệu</a>
+          </li>
+          <li class="nav-item navItem">
+            <a class="nav-link" href="/admin_customer">Khách Hàng</a>
+          </li>
+          <li class="nav-item navItem">
+            <a class="nav-link" href="/admin_order">Đơn Hàng</a>
+          </li>
+          <li class="nav-item navItem">
+            <a class="nav-link" href="#doanhthu">Doanh thu từng tháng</a>
+          </li>
+          <li class="nav-item navItem">
+            <a class="nav-link" href="#bestseller">Sản phẩm bán chạy nhất</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+    <div class="contentAdmin">
+      <center> <br>
+        <h1 style="color: #928841;"> CHÀO MỪNG BẠN ĐẾN VỚI TRANG QUẢN TRỊ</h1>
+        <br>
+      </center>
+      <div style="margin-bottom: 27px;" id="doanhthu">
+        <center>
+          <h3>Thống kê doanh thu theo tháng năm 2020</h3>
+        </center>
+        <br>
+        <p style="display: none;">
+          <% doanhthu.forEach( (item, index) => { %>
+          <span class="tongtien"><%= item.tongtien %></span>
+          <span class="thang"><%= item.thang %></span>
+          <% }) %>
+        </p>
+        <center><canvas id="pie-chart" width="800" height="450"></canvas></center>
+        <script>
+
+          let months = document.getElementsByClassName("thang");
+          let arrMonths = []
+
+          for (let i = 0; i < months.length; i++) {
+            arrMonths.push('Tháng ' + months[i].innerHTML);
+          }
+
+          let totalPerMonth = document.getElementsByClassName("tongtien");
+          let arrTotalPerMonth = []
+
+          for (let i = 0; i < totalPerMonth.length; i++) {
+            arrTotalPerMonth.push(totalPerMonth[i].innerHTML);
+          }
+
+          //    console.log("all months:", arrTotalPerMonth)
+
+          // console.log("doanhthu:", doanhthu)
+          let temp = localStorage.getItem("thongke");
+          console.log(JSON.parse(temp))
+
+          chart = new Chart(document.getElementById("pie-chart"), {
+            type: 'pie',
+            data: {
+              labels: arrMonths,
+              datasets: [{
+                label: "VNĐ",
+                backgroundColor: ["#339966", "#97FFFF", "#BEBEBE", "#528B8B"],
+                data: arrTotalPerMonth
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: 'Biểu đồ doanh thu bán mỹ phẩm theo từng tháng'
+              }
+            }
+          });
+        </script>
+      </div>
+      <div id="bestseller">
+        <p style="display: none;">
+          <% TKSP.forEach( (item, index) => { %>
+          <span class="ten"><%= item.tenSP %></span>
+          <span class="sl"><%= item.sl %></span>
+          <% }) %>
+        </p>
+        <div class="container">
+          <br><br><br>
+          <canvas id="myChart"></canvas>
+        </div>
+
+        <script>
+          let myChart = document.getElementById('myChart').getContext('2d');
+          let tenSP = document.getElementsByClassName("ten");
+          let arrNames = []
+
+          for (let i = 0; i < tenSP.length; i++) {
+            arrNames.push(tenSP[i].innerHTML);
+          }
+
+          let amount = document.getElementsByClassName("sl");
+          let arrAmounts = []
+
+          for (let i = 0; i < amount.length; i++) {
+            arrAmounts.push(amount[i].innerHTML);
+          }
+
+          // let temp = localStorage.getItem("thongke");
+          // console.log(JSON.parse(temp))
+
+          // Global Options
+          Chart.defaults.global.defaultFontFamily = 'Lato';
+          Chart.defaults.global.defaultFontSize = 16;
+          Chart.defaults.global.defaultFontColor = '#777';
+
+          let massPopChart = new Chart(myChart, {
+            type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+              labels: arrNames,
+              datasets: [{
+                label: 'Số lượng',
+                data: arrAmounts,
+                //backgroundColor:'green',
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.6)',
+                  'rgba(54, 162, 235, 0.6)',
+                  'rgba(255, 206, 86, 0.6)',
+                  'rgba(75, 192, 192, 0.6)',
+                  'rgba(153, 102, 255, 0.6)',
+                  'rgba(255, 159, 64, 0.6)',
+                  'rgba(255, 99, 132, 0.6)',
+                  '#00CDCD',
+                  '#528B8B',
+                  'rgba(255, 254, 64, 0.6)',
+                ],
+                borderWidth: 1,
+                borderColor: '#777',
+                hoverBorderWidth: 3,
+                hoverBorderColor: '#000'
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: 'Sản phẩm bán chạy',
+                fontSize: 25
+              },
+              legend: {
+                display: true,
+                position: 'right',
+                labels: {
+                  fontColor: '#000'
+                }
+              },
+              layout: {
+                padding: {
+                  left: 50,
+                  right: 0,
+                  bottom: 0,
+                  top: 0
+                }
+              },
+              tooltips: {
+                enabled: true
+              }
+            }
+          });
+        </script>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</body>
+<style>
+  ul li a {
+    color: white;
+  }
+  a:hover{
+    color: chocolate;
+  }
+  span {
+    margin-top: 8px;
+  }
+
+  #pie-chart {
+    width: 800px !important;
+    height: 450px !important;
+  }
+
+  .menuAdmin {
+    
+    width: 20%;
+  }
+
+  .contentAdmin {
+   
+    width: 80%;
+  }
+
+  #trangchu {
+    margin-bottom: 3rem;
+    border: 1px solid;
+    padding-right: 70px;
+    padding-left: 70px;
+    border-radius: 10px;
+  }
+
+  .navItem {
+    text-align: center;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+
+  span {
+    margin-top: 8px;
+  }
+
+  .img-fluid {
+    height: 20%;
+  }
+  #myChart {
+    margin-left: -6rem;
+  }
+</style>
+
+</html>

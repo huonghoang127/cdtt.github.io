@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiLy Cosmetic</title>
+    <!-- Link Css -->
+    <link rel="stylesheet" href="./css/_grid.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style_all.css">
+    <!-- bootstrap4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Font -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <!-- Link Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <!-- Link Ion Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.1.2/collection/components/icon/icon.min.css"
+        integrity="sha512-DR9Jj0uFIfe7v1QLrvPRusRxqdSnVSVRyRBt1H8gcRQgxMKEwsOMSNYs0hyIpo8AITFyCMDC2Q1fCg1XcgdYig=="
+        crossorigin="anonymous" />
+    <!-- Link Owl Carousel Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="" id="main">
+        <div class="" id="header">
+            <div class="container-fluid" id="nav1">
+                <div id="nav1_content" style="position: fixed;">
+                    <marquee>!!! Săn mã nhận QUÀ KHỦNG lên đến 2 triệu đồng!!!</marquee>
+
+                </div>
+            </div>
+            <div id="header_content">
+                <div class=" inline_block" id="navbar">
+                    <nav class="navbar navbar-expand-md box ">
+                        <a class="navbar-brand inline_block" href="/" style="float: left;"><img src="images/logo.png"
+                                width="70%"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <form method="GET" class="input" action="/search">
+                                <input type="text" class="form-control" name="key" id="key"
+                                    placeholder="Tìm Kiếm sản phẩm..." aria-label="Tìm kiếm"
+                                    aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button type="submit" class="search"
+                                        style="border: 0px solid white; padding: 0px;"><span class="input-group-text"
+                                            id="basic-addon2" style="background-color: white; padding-bottom: 10px;
+                                        padding-top: 10px;"><i class="fas fa-search"></i></span></button>
+                                </div>
+                            </form>
+                            <% if (dataCustomer.id) { %>
+                                <ul class="navbar-nav ml-auto style" style="margin-top:6px;">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <ion-icon style="margin-top: -2px; font-size: 30px;" name="person-circle-outline">
+                                            </ion-icon>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#"><%= dataCustomer.name %></a>
+                                            <a class="dropdown-item" href="#" onclick="logOut()">Đăng xuất</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item cart">
+                                        <a class="nav-link" href="/cart" style="display: inline-block;
+                                                position: relative;">
+                                            <ion-icon name="cart-outline" style="font-size: 25px;"></ion-icon>
+                                            </i><span class="cartNum">0</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <% } else {%>
+                                <ul class="navbar-nav ml-auto style">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/login">Đăng Nhập</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/register">Đăng Ký</a>
+                                    </li>
+                                    <li class="nav-item cart">
+                                        <a class="nav-link" href="/cart" style="display: inline-block;
+                                                position: relative;">
+                                            <ion-icon name="cart-outline" style="font-size: 25px;"></ion-icon>
+                                            </i><span class="cartNum">0</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <% } %>
+                        </div>
+                       
+                </div>
+                </nav>
+                <hr>
+                <div id="menu">
+                    <nav>
+                        <a href="#SHOP" class="">SHOP</a>
+                        <a href="#NEW" class="js-scroll-trigger">NEW</a>
+                        <a href="#BESTSELLER" class="js-scroll-trigger">BEST SELLER</a>
+                        <a href="#BRAND" class="js-scroll-trigger">BRAND</a>
+                        <a href="/review" class="">REVIEW</a>
+                    </nav>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <div id="slider">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+                <li data-target="#demo" data-slide-to="4"></li>
+                <li data-target="#demo" data-slide-to="5"></li>
+                <li data-target="#demo" data-slide-to="6"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="image" src="images/Uni.PNG" alt="">
+
+                </div>
+                <div class="carousel-item">
+                    <img class="image" src="images/banner.jpg" alt="">
+
+                </div>
+                <div class="carousel-item">
+                    <img class="image" src="images/merzy.PNG" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img class="image" src="images/lemonade.jpg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img class="image" src="images/senka.PNG" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img class="image" src="images/inisfree.PNG" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img class="image" src="images/larochepossay.PNG" alt="">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+    <br><br>
+    <section class="pros">
+        <div class="container-fluid">
+            <div class="pros-wrapper">
+                <div class="row">
+                    <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6">
+                        <div class="pros__item">
+                            <img src="./images/static-icons-1.png" alt="">
+                            <div class="pros__item-content">
+                                <h4 class="item-content__heading">Free Shipping</h4>
+                                <p class="item-content__text">Hóa đơn từ 500.000đ </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6">
+                        <div class="pros__item">
+                            <img src="./images/static-icons-2.png" alt="">
+                            <div class="pros__item-content">
+                                <h4 class="item-content__heading">Free Returns</h4>
+                                <p class="item-content__text">Đổi trả miễn phí trong 7 ngày</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6">
+                        <div class="pros__item">
+                            <img src="./images/static-icons-3.png" alt="">
+                            <div class="pros__item-content">
+                                <h4 class="item-content__heading">100% Payment Secure</h4>
+                                <p class="item-content__text">Thanh toán của bạn luôn an toàn.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6">
+                        <div class="pros__item">
+                            <img src="./images/static-icons-4.png" alt="">
+                            <div class="pros__item-content">
+                                <h4 class="item-content__heading">Support 24/7</h4>
+                                <p class="item-content__text">Liên hệ với chúng tôi 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bestSellers" id="BESTSELLER">
+        <div class="container-fluid">
+            <!-- Title -->
+            <h2 class="bestSellers__heading">Best Sellers</h2>
+            <p class="bestSellers__title">Lựa chọn những sản phẩm yêu thích của bạn</p>
+            <div class="divider">
+
+            </div>
+            <!-- Slider -->
+            <div class="row">
+                <div class="owl-carousel owl-theme bestSellers-slider">
+                    <% bestseller.forEach((bestseller, index) => { %>
+                    <div class="slider__item">
+                        <div class="slider__item-img">
+                            <a href="/product/<%= bestseller.idSP %>" class="item-img__link">
+                                <img src="./images/<%= bestseller.hinhanh %>" alt="" class="first-img">
+                            </a>
+                            <div class="item-img__quick-view">
+                                <a href="/product/<%= bestseller.idSP %>" class="quick-view__link">
+                                    <ion-icon name="search-outline"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="slider__item-flag">
+                            <li class="item-flag__item">New</li>
+                        </ul>
+                        <div class="slider__item-info">
+                            <a href="/product/<%= bestseller.idSP %>" class="item-info__link">
+                                <small>
+                                    <%= bestseller.tenTH %>
+                                </small>
+                            </a>
+                            <h2 class="item-info__heading">
+                                <a href="/product/<%= bestseller.idSP %>" class="info__heading-link">
+                                    <%= bestseller.tenSP %>
+                                </a>
+                            </h2>
+                            <div class="item-info__rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <ul class="item-info__price">
+                                <!-- <li class="old-price discounted">
+                                    </li> -->
+                                <li class="current-price">
+                                    <small><%= bestseller.gia %><span style="color: red;">đ</span></small>
+                                </li>
+                                <!-- <li class="discount-price">
+                                        -5%
+                                    </li> -->
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="slider__item-action">
+                            <div class="item-action">
+                                <button class="carts item-action__link btn btn-danger"
+                                    onclick="addProduct('<%= bestseller.idSP %>',
+                                                                                '<%= bestseller.tenSP %>', '<%= bestseller.gia %>')">
+                                    Thêm vào giỏ
+                                </button>
+                            </div>
+                            <div class="item-action__icon">
+                                <a href="#" class="action__icon-link">
+                                    <ion-icon name="shuffle-outline"></ion-icon>
+                                </a>
+                                <a href="#" class="action__icon-link">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+            <br>
+            <div class="container-fluid">
+                <hr style="border: 0.5px solid goldenrod;">
+            </div>
+        </div>
+    </section>
+    <section class="popularCategories" id="SHOP">
+        <div class="container-fluid">
+            <h2 class="popularCategories__heading">Sản phẩm nổi bật </h2>
+            <p class="popularCategories__title">Lựa chọn những sản phẩm yêu thích của bạn</p>
+            <!-- Slider -->
+            <div class="row">
+
+                <div class="owl-carousel owl-theme popular-slider">
+                    <% rate.forEach((rate, index) => { %>
+                    <div class="slider__list">
+                        <div class="slider__list-item mb-2">
+                            <div class="list-item__img">
+                                <a href="/product/<%= rate.idSP %>" class="item__img-link">
+                                    <img src="./images/<%= rate.hinhanh %>" alt="">
+                                </a>
+                            </div>
+                            <div class="list-item__info">
+                                <h4 class="item__info-heading"><%= rate.tenSP%></h4>
+                                <p class="item__info-text">17 sản phẩm </p>
+                                <a href="/product/<%= rate.idSP %>" class="item__info-link">
+                                    Shop Now
+                                    <ion-icon name="caret-forward-circle"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hot" id="NEW">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Hot Deals -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Title -->
+                            <h2 class="hot-deal__heading">Hot Deals</h2>
+                            <p class="hot-deal__title">Add hot products to weekly line up</p>
+                        </div>
+                    </div>
+                    <div class="owl-carousel owl-theme hot-deal__slider">
+                        <div class="slider__item">
+                            <div class="slider__item-img">
+                                <a href="#" class="item-img__link">
+                                    <img src="./images/hot-11.png" alt="" class="first-img">
+                                    <img src="./images/hot-12.png" alt="" class="second-img">
+                                </a>
+                                <div class="item-img__quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <ul class="slider__item-flag">
+                                <li class="item-flag__item">New</li>
+                            </ul>
+                            <div class="slider__item-info">
+                                <a href="#" class="item-info__link">
+                                    <small>
+                                        HYALU B5 HYALURONIC ACID SERUM
+                                    </small>
+                                </a>
+                                <h2 class="item-info__heading">
+                                    <a href="#" class="info__heading-link">
+                                        Tinh Chất La Roche-Posay Hyalu B5 Hyaluronic Acid Serum (30ml)
+                                    </a>
+                                </h2>
+                                <div class="item-info__rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item-info__price">
+                                    <li class="old-price discounted">
+                                        <small>1.000.000 đ</small>
+                                    </li>
+                                    <li class="current-price">
+                                        <small>940.000 đ</small>
+                                    </li>
+                                    <li class="discount-price">
+                                        -6%
+                                    </li>
+                                </ul>
+                            </div>
+                            <br>
+                            <div class="slider__item-action">
+                                <div class="item-action">
+                                    <button class=" carts item-action__link btn btn-danger">
+                                        Thêm vào giỏ
+                                    </button>
+                                </div>
+                                <div class="item-action__icon">
+                                    <a href="#" class="action__icon-link">
+                                        <ion-icon name="shuffle-outline"></ion-icon>
+                                    </a>
+                                    <a href="#" class="action__icon-link">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slider__item-stock">
+                                Có sẵn :
+                                <span>300 trong kho</span>
+                            </div>
+                            <div class="slider__item-clock">
+                                <div class="item-clock__title">
+                                    Khuyến mãi còn :
+                                </div>
+                                <div class="item-clock__time">
+                                    <span class="day">
+                                        <span class="day-value"></span>
+                                        <p class="clock__time-unit">NGÀY</p>
+                                    </span>
+                                    <span class="hour">
+                                        <span class="hour-value"></span>
+                                        <p class="clock__time-unit">GIỜ</p>
+                                    </span>
+                                    <span class="minute">
+                                        <span class="minute-value"></span>
+                                        <p class="clock__time-unit">PHÚT</p>
+                                    </span>
+                                    <span class="second">
+                                        <span class="second-value"></span>
+                                        <p class="clock__time-unit">GIÂY</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider__item">
+                            <div class="slider__item-img">
+                                <a href="#" class="item-img__link">
+                                    <img src="./images/hot-21.png" alt="" class="first-img">
+                                    <img src="./images/hot-22.png" alt="" class="second-img">
+                                </a>
+                                <div class="item-img__quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <ul class="slider__item-flag">
+                                <li class="item-flag__item">New</li>
+                            </ul>
+                            <div class="slider__item-info">
+                                <a href="#" class="item-info__link">
+                                    <small>
+                                        JEJU CHERRY BLOSSOM MIST
+                                    </small>
+                                </a>
+                                <h2 class="item-info__heading">
+                                    <a href="#" class="info__heading-link">
+                                        Xịt khoáng dưỡng sáng innisfree
+                                    </a>
+                                </h2>
+                                <div class="item-info__rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item-info__price">
+                                    <li class="old-price discounted">
+                                        <small>300.000 đ</small>
+                                    </li>
+                                    <li class="current-price">
+                                        <small>270.000 đ</small>
+                                    </li>
+                                    <li class="discount-price">
+                                        -10%
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="slider__item-action">
+                                <div class="item-action">
+                                    <button class=" carts item-action__link btn btn-danger">
+                                        Thêm vào giỏ
+                                    </button>
+                                </div>
+                                <div class="item-action__icon">
+                                    <a href="#" class="action__icon-link">
+                                        <ion-icon name="shuffle-outline"></ion-icon>
+                                    </a>
+                                    <a href="#" class="action__icon-link">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slider__item-stock">
+                                Có sẵn :
+                                <span>250 trong kho</span>
+                            </div>
+                            <div class="slider__item-clock">
+                                <div class="item-clock__title">
+                                    Khuyến mãi còn :
+                                </div>
+                                <div class="item-clock__time">
+                                    <span class="day">
+                                        <span class="day-value"></span>
+                                        <p class="clock__time-unit">NGÀY</p>
+                                    </span>
+                                    <span class="hour">
+                                        <span class="hour-value"></span>
+                                        <p class="clock__time-unit">GIỜ</p>
+                                    </span>
+                                    <span class="minute">
+                                        <span class="minute-value"></span>
+                                        <p class="clock__time-unit">PHÚT</p>
+                                    </span>
+                                    <span class="second">
+                                        <span class="second-value"></span>
+                                        <p class="clock__time-unit">GIÂY</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider__item">
+                            <div class="slider__item-img">
+                                <a href="#" class="item-img__link">
+                                    <img src="./images/hot-31.png" alt="" class="first-img">
+                                    <img src="./images/hot-32.png" alt="" class="second-img">
+                                </a>
+                                <div class="item-img__quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <ul class="slider__item-flag">
+                                <li class="item-flag__item">New</li>
+                            </ul>
+                            <div class="slider__item-info">
+                                <a href="#" class="item-info__link">
+                                    <small>
+                                        L'OREAL PARIS WHITE PERFECT CLINICAL
+                                    </small>
+                                </a>
+                                <h2 class="item-info__heading">
+                                    <a href="#" class="info__heading-link">
+                                        Tinh chất tăng cường dưỡng trắng da & giảm thâm nám
+                                    </a>
+                                </h2>
+                                <div class="item-info__rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item-info__price">
+                                    <li class="old-price discounted">
+                                        <small>449.000 đ</small>
+                                    </li>
+                                    <li class="current-price">
+                                        <small>385.000 đ</small>
+                                    </li>
+                                    <li class="discount-price">
+                                        -14%
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="slider__item-action">
+                                <div class="item-action">
+                                    <button class=" carts item-action__link btn btn-danger">
+                                        Thêm vào giỏ
+                                    </button>
+                                </div>
+                                <div class="item-action__icon">
+                                    <a href="#" class="action__icon-link">
+                                        <ion-icon name="shuffle-outline"></ion-icon>
+                                    </a>
+                                    <a href="#" class="action__icon-link">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slider__item-stock">
+                                Có sẵn :
+                                <span>400 trong kho </span>
+                            </div>
+                            <div class="slider__item-clock">
+                                <div class="item-clock__title">
+                                    Khuyến mãi còn :
+                                </div>
+                                <div class="item-clock__time">
+                                    <span class="day">
+                                        <span class="day-value"></span>
+                                        <p class="clock__time-unit">NGÀY</p>
+                                    </span>
+                                    <span class="hour">
+                                        <span class="hour-value"></span>
+                                        <p class="clock__time-unit">GIỜ</p>
+                                    </span>
+                                    <span class="minute">
+                                        <span class="minute-value"></span>
+                                        <p class="clock__time-unit">PHÚT</p>
+                                    </span>
+                                    <span class="second">
+                                        <span class="second-value"></span>
+                                        <p class="clock__time-unit">GIÂY</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider__item">
+                            <div class="slider__item-img">
+                                <a href="#" class="item-img__link">
+                                    <img src="./images/hot-4.png" alt="" class="first-img">
+                                </a>
+                                <div class="item-img__quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <ul class="slider__item-flag">
+                                <li class="item-flag__item">New</li>
+                            </ul>
+                            <div class="slider__item-info">
+                                <a href="#" class="item-info__link">
+                                    <small>
+                                        ADVANCED NOURISH LOTION
+                                    </small>
+                                </a>
+                                <h2 class="item-info__heading">
+                                    <a href="#" class="info__heading-link">
+                                        Dung dịch dưỡng ẩm tối ưu Hada Labo
+                                    </a>
+                                </h2>
+                                <div class="item-info__rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item-info__price">
+                                    <li class="old-price discounted">
+                                        <small>185.000 đ</small>
+                                    </li>
+                                    <li class="current-price">
+                                        <small>169.000 đ</small>
+                                    </li>
+                                    <li class="discount-price">
+                                        -9%
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="slider__item-action">
+                                <div class="item-action">
+                                    <button class=" carts item-action__link btn btn-danger">
+                                        Thêm vào giỏ
+                                    </button>
+                                </div>
+                                <div class="item-action__icon">
+                                    <a href="#" class="action__icon-link">
+                                        <ion-icon name="shuffle-outline"></ion-icon>
+                                    </a>
+                                    <a href="#" class="action__icon-link">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slider__item-stock">
+                                Có sẵn :
+                                <span>150 trong kho</span>
+                            </div>
+                            <div class="slider__item-clock">
+                                <div class="item-clock__title">
+                                    Khuyến mại còn :
+                                </div>
+                                <div class="item-clock__time">
+                                    <span class="day">
+                                        <span class="day-value"></span>
+                                        <p class="clock__time-unit">NGÀY</p>
+                                    </span>
+                                    <span class="hour">
+                                        <span class="hour-value"></span>
+                                        <p class="clock__time-unit">GIỜ</p>
+                                    </span>
+                                    <span class="minute">
+                                        <span class="minute-value"></span>
+                                        <p class="clock__time-unit">PHÚT</p>
+                                    </span>
+                                    <span class="second">
+                                        <span class="second-value"></span>
+                                        <p class="clock__time-unit">GIÂY</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Arrivals -->
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Title -->
+                            <h2 class="hot__arrival-heading">Mới Về</h2>
+                            <p class="hot__arrival-title">Lựa chọn những sản phẩm yêu thích của bạn</p>
+                        </div>
+                    </div>
+                    <div class="owl-carousel owl-theme new-arrival__slider">
+                        <% newarrive.forEach((newarrive, index) => { %>
+                        <div class="slider__list">
+                            <div class="slider__list-item">
+                                <div class="list-item__img">
+                                    <a href="/product/<%= newarrive.idSP %>" class="item__img-link">
+                                        <img src="./images/<%= newarrive.hinhanh %>" alt="" class="first_img">
+                                    </a>
+                                    <div class="item__img-quick-view">
+                                        <a href="/product/<%= newarrive.idSP %>" class="quick-view__link">
+                                            <ion-icon name="search-outline"></ion-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                                <ul class="list-item__flag">
+                                    <li class="item__flag-item">New</li>
+                                </ul>
+                                <div class="list-item__info">
+                                    <a href="/product/<%= newarrive.idSP %>" class="item__info-link">
+                                        <small>
+                                            <%= newarrive.tenTH %>
+                                        </small>
+                                    </a>
+                                    <h2 class="item__info-heading">
+                                        <a href="/product/<%= newarrive.idSP %>" class="info-heading__link">
+                                            <%= newarrive.tenSP %>
+                                        </a>
+                                    </h2>
+                                    <div class="item__info-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <ul class="item__info-price">
+                                        <!-- <li class="old-price discounted">
+                                                <small></small>
+                                            </li> -->
+                                        <li class="current-price">
+                                            <small><%= newarrive.gia %><span style="color: red;">đ</span></small>
+                                        </li>
+                                        <!-- <li class="discount-price">
+                                                -10%
+                                            </li> -->
+                                        <br>
+                                    </ul>
+                                </div>
+                                <div class="list-item__action">
+                                    <div class="item__action">
+                                        <button class="carts item-action__link btn btn-danger" onclick="addProduct('<%= newarrive.idSP %>',
+                                                '<%= newarrive.tenSP %>', '<%= newarrive.gia %>')">
+                                            Thêm vào giỏ
+                                        </button>
+                                    </div>
+
+                                    <div class="item__action-icon">
+                                        <a href="#" class="action-icon__link">
+                                            <ion-icon name="shuffle-outline"></ion-icon>
+                                        </a>
+                                        <a href="#" class="action-icon__link">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <hr style="border: 0.5px solid goldenrod;">
+        </div>
+        <br>
+    </section>
+    <section class="featured">
+        <div class="container-fluid">
+            <!-- Title -->
+            <h2 class="featured__heading">Danh mục sản phẩm</h2>
+            <p class="featured__title">Lựa chọn những sản phẩm yêu thích của bạn</p>
+            <!-- Slider -->
+            <div class="row">
+                <div class="owl-carousel owl-theme featured-slider">
+                    <div class="slider__list">
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="./images/feature-1.png" alt="" class="first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        HADA LABO
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        Pro Anti Aging Essence
+                                    </a>
+                                </h2>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="current-price">
+                                        <small>279.000 đ</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="/images/feature-2.png" alt="" class="first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        HADA LABO
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        Perfect White Supreme Cream
+                                    </a>
+                                </h2>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="current-price">
+                                        <small>239.000 đ</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__list">
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="./images/feature-3.png" alt="" class="first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        ANESSA
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        Perfect UV SPF50+/PA++++
+                                    </a>
+                                </h2>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="old-price discounted">
+                                        <small>275.000 đ</small>
+                                    </li>
+                                    <li class="current-price">
+                                        <small>251.000 đ</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="./images/feature-4.png" alt="" class="first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        LOREAL PARIS
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        Youth Code Skin Activating
+                                    </a>
+                                </h2>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="old-price discounted">
+                                        <small>618.000 đ</small>
+                                    </li>
+                                    <li class="current-price">
+                                        <small>489.000 đ</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__list">
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="./images/feature-5.png" alt="" class="first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        YVES ROCHER
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        The Anti-Aging Lotion
+                                    </a>
+                                </h2>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="old-price discounted">
+                                        <small>999.000 đ</small>
+                                    </li>
+                                    <li class="current-price">
+                                        <small>699.000 đ</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="./images/feature-6.png" alt="" class="first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        INNISFREE
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        Essential Body Cleanser
+                                    </a>
+                                </h2>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="current-price">
+                                        <small>290.000 đ</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__list">
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="./images/feature-7.png" alt="" class="first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        SOME BY MI
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        AHA-BHA-PHA Miracle Toner
+                                    </a>
+                                </h2>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="old-price discounted">
+                                        <small>345.000 đ</small>
+                                    </li>
+                                    <li class="current-price">
+                                        <small>269.000 đ</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="./images/feature-8.png" alt="" class=" first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        INNISFREE
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        No Sebum Mineral Pact
+                                    </a>
+                                </h2>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="current-price">
+                                        <small>260.000 đ</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__list">
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="./images/feature-9.png" alt="" class="first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        INNISFREE
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        Green Tea
+                                    </a>
+                                </h2>
+                                <br>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="current-price">
+                                        <small>239.000 đ</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="slider__list-item">
+                            <div class="list-item__img">
+                                <a href="#" class="item__img-link">
+                                    <img src="./images/feature-10.png" alt="" class="first-img">
+                                </a>
+                                <div class="item__img-quick-view">
+                                    <a href="#" class="quick-view__link">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="list-item__info">
+                                <a href="#" class="item__info-link">
+                                    <small>
+                                        MERZY
+                                    </small>
+                                </a>
+                                <h2 class="item__info-heading">
+                                    <a href="#" class="info-heading__link">
+                                        L1 - Excuse me
+                                    </a>
+                                </h2>
+                                <div class="item__info-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <ul class="item__info-price">
+                                    <li class="current-price">
+                                        <small>179.000 đ</small>
+                                    </li>
+                                    <br><br>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Start Brands Slider -->
+    <section id="BRAND">
+        <!-- Banner -->
+        <div id="demo2" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo2" data-slide-to="0" class="active"></li>
+                <li data-target="#demo2" data-slide-to="1"></li>
+                <li data-target="#demo2" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="banner_brand" src="./images/banner-1.png" alt="" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img class="banner_brand" src="./images/banner-2.png" alt="" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img class="banner_brand" src="./images/banner-3.png" alt="" width="100%">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo2" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo2" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+        <br><br><br><br>
+        <!-- brand -->
+        <div class="container-fluid" style="padding-top: 30px;">
+            <div class="row">
+                <div class="owl-carousel owl-theme popular-slider">
+                    <% brand.forEach((brand, index) => { %>
+                    <div class="slider__list">
+                        <div class="slider__list-item mb-2"
+                            style="border: 0.5px solid palevioletred; border-radius: 8px;">
+                            <div class="list-item__img">
+                                <a href="/brand/<%= brand.idTH %>" class="item__img-link">
+                                    <img src="./images/<%= brand.logo %>" alt="">
+                                </a>
+                            </div>
+                            <div class="list-item__info">
+                                <h4 class="item__info-heading" style="color: brown;"><%= brand.tenTH%></h4>
+                                <br>
+                                <a href="/brand/<%= brand.idTH %>" class="item__info-link">
+                                    Shop Now
+                                    <ion-icon name="caret-forward-circle"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Brands Slider -->
+    <div id="footer" class="container-fluid">
+        <div id="footer_content" class="row">
+            <div class="col-sm-3">
+                <h3>Lily Cosmetic</h3>
+                <br>
+                <p>Lily Cosmetic là kênh mua sắm mỹ phẩm, làm đẹp hàng đầu Việt Nam. Mang đến cho khách hàng những
+                    sản phẩm chất lượng, uy tín.</p>
+            </div>
+            <div class="col-sm-5">
+                <h4>Kết nối với chúng tôi</h4>
+                <br>
+                <iframe
+                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLiLy-Comestic-100342605183250&tabs=timeline&width=500&height=70&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                    width="400" height="70" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                    allowTransparency="true" allow="encrypted-media"></iframe>
+                <br><br>
+                <p>Hotline: 0333.017.333</p>
+                <p>Email: cnttk59a@gmail.com</p>
+                <br>
+                <div>
+                    <i class="fab fa-facebook-f footer_icon"></i>
+                    &nbsp;&nbsp;&nbsp;
+                    <i class="fab fa-facebook-messenger footer_icon"></i>
+                    &nbsp;&nbsp;
+                    <i class="fab fa-instagram footer_icon"></i>
+                    &nbsp;&nbsp;
+                    <i class="far fa-envelope footer_icon"></i>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <h3>Liên hệ </h3>
+                <p>Địa chỉ: 207 Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.820419355175!2d105.83999941424476!3d20.999834494142586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac71752d8f79%3A0xd2ec575c01017afa!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBLaW5oIFThur8gUXXhu5FjIETDom4!5e0!3m2!1svi!2s!4v1602394305413!5m2!1svi!2s"
+                    width="250" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .dropdown-toggle::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 0.255em;
+        vertical-align: 10px;
+        content: "";
+        border-top: .3em solid;
+        border-right: .3em solid transparent;
+        border-bottom: 0;
+        border-left: .3em solid transparent;
+    }
+
+        #header_content {
+            width: 80%;
+            padding: 5px;
+            margin: 0px auto;
+
+
+        }
+
+        .inline_block {
+            display: inline-block;
+            text-decoration: none;
+
+        }
+
+        #navbar {
+            /* float: right; */
+            padding: 10px;
+            font-size: 110%;
+            margin-top: -50px;
+            width: 100%;
+            margin-bottom: -40px;
+        }
+
+        #navbar nav a {
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .input {
+            /* margin: -1px;
+        
+        border: 1px solid #b1154a; */
+            width: 62%;
+            margin-top: 4px;
+            display: inline-flex;
+        }
+
+        #menu {
+            display: inline-block;
+            margin: 0px auto;
+            /* margin-bottom: -20px; */
+        }
+
+        #menu :hover {
+            color: darkgoldenrod;
+        }
+
+        #menu nav a {
+            text-decoration: none;
+            padding: 70px;
+            font-size: 103%;
+            color: black;
+            font-weight: bold;
+        }
+
+        #slider {
+            width: 100%;
+            margin-top: -45px;
+            margin-bottom: 20px;
+        }
+
+        .image {
+            width: 100%;
+            margin-top: 30px;
+            height: 500px;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        #content_cover {
+            width: 100%;
+        }
+
+        #content {
+            width: 80%;
+        }
+
+        .box {
+            margin-bottom: -20px;
+
+        }
+
+        nav li a {
+            color: black;
+        }
+
+        .style {
+            margin-top: -10px;
+        }
+
+        .brandName {
+            color: brown;
+        }
+
+        #footer {
+            width: 100%;
+            background-color: #363636;
+            margin-top: 30px;
+        }
+
+        #footer_content {
+            width: 80%;
+            color: blanchedalmond;
+            margin: 0px auto;
+            padding: 13px;
+        }
+
+        div nav {
+            width: 100%;
+        }
+
+        #collapsibleNavbar {
+            margin: 55px;
+        }
+
+        #nav1 {
+            width: 100%;
+            background-color: #363636;
+            margin-top: 9px;
+            margin-bottom: -15px;
+            margin: 0px auto;
+            height: 40px;
+        }
+
+        #nav1_content {
+            width: 80%;
+            display: inline-block;
+            color: white;
+            font-size: small;
+            padding-left: 160px;
+            margin-top: 10px;
+        }
+
+        .footer_icon {
+            font-size: 1.5rem;
+            border: 1px solid white;
+            padding: 1rem;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            justify-content: center;
+            /* color: blue; */
+            align-items: center;
+            display: inline-flex;
+        }
+
+        h2 {
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        .banner_brand {
+            height: 400px;
+        }
+
+        #demo2 {
+            margin-bottom: -50px;
+        }
+
+        .search :hover {
+            color: chocolate;
+        }
+</style>
+<!-- Link Jquery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<!-- Link Js -->
+<script src="./js/main.js"></script>
+<!-- Link js Ionicons -->
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.1.2/cjs/ionicons.cjs.js"
+    integrity="sha512-v+I+njNdfChZYsA6UjfvoCfVuC59kiuqEALSEgHloBjhNaMlcWxEFWU2nHl1c/4vWvOtWugbAZwE6Ae4iwqF9A=="
+    crossorigin="anonymous"></script>
+<!-- Link Owl Carousel Js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous"></script>
+<script>
+    function logOut() {
+        $.post("/logOut", {
+
+        },
+            function (data, status) {
+                if (data.stt) {
+                    window.location.href = "/"
+                }
+            });
+    }
+</script>
+
+</html>
